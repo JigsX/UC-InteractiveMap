@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leaflet Map</title>
+        <!-- Include Leaflet CSS and JS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script
+            src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+        <style>
+            /* Style for hiding the divs initially */
+            .hidden {
+                display: none;
+            }
+            #vis-hid {
+                display: visible;
+            }
+            #map {
+                background:	#7FFFD4;
+                height: 700px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <div id="choice" class="vis-hid">
+            <button onclick="showDiv('search-1','choice')"> Enter Destination
+            </button>
+            <button onclick="showDiv('search-2','choice')"> Find Closest
+                Facility
+            </button>
+        </div>
+
+        <div id="search-1" class="hidden">
+            <form id="myForm">
+                <label for="InputCurrentRoom1"> Enter Current Room </label>
+                <input type="text" id="InputCurrentRoom">
+
+                <label for="InputDestinationRoom"> Enter Destination Room
+                </label>
+                <input type="search" id="InputDestinationRoom">
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="search-2" class="hidden">
+            <form id="myForm2">
+                <label for="InputCurrentRoom1"> Enter Current Room </label>
+                <input type="text" id="InputCurrentRoom">
+
+                <label for="InputDestinationRoom"> Choice facility
+                </label>
+                <input type="search" id="InputDestinationRoom">
+
+                <input type="submit" value="Submit" id="submitButton"
+                    onclick="showMapDiv('map')">
+            </form>
+        </div>
+        <script src="back-end.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>
